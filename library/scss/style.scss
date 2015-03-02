@@ -1,0 +1,137 @@
+@import "typography";
+@import "variables";
+@import "bootstrap-variables";
+@import "bootstrap-custom";
+@import "mixins";
+
+
+#banner {
+	padding-bottom:$grid-gutter-width;
+}
+
+#main {
+	//background-color: #efefef;
+}
+
+#title {
+	font-style:italic;
+}
+canvas {
+	width:100%;
+	height:100%;
+	display:block;
+}
+
+#image-wrapper {
+	position:relative;
+	overflow:hidden;
+	width:100%;
+	height:auto;
+	padding:15px 0 30px;
+}
+
+#canvas-wrapper {
+	
+	//border-left: 1px solid rgb(120,120,120);
+	//border-right: 1px solid rgb(120,120,120);
+}
+
+#zoom-wrapper {
+	position: absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	
+	&.active {
+		overflow:scroll;
+		//cursor:all-scroll;
+	}
+	#inner {
+		
+	}
+}
+
+#main {
+	@include even-shadow;
+	background-color: rgb(230,230,230);
+}
+
+///////////////////////
+#thumb-wrapper {}
+
+.thumb-column {
+	padding-top: $grid-gutter-width / 2;
+	padding-bottom: $grid-gutter-width / 2;
+	padding-left: $grid-gutter-width / 4;
+	padding-right: $grid-gutter-width / 4;
+}
+
+.thumb {
+	width:100%;
+	height:100%;
+	position:relative;
+	left:0; top:0;
+	background-color:rgb(215,215,215);
+	-webkit-box-shadow: -1px 6px 15px -2px  rgb(190,190,190) inset;
+	-moz-box-shadow:   -1px 6px 15px -2px  rgb(190,190,190) inset;
+	box-shadow:         -1px 6px 15px -2px  rgb(190,190,190) inset;
+	
+	a {
+		display:block;
+		margin: 0 auto;
+	}
+	img {
+		//margin:0 auto;
+		opacity:.6;
+	}
+	&.hover-on {
+		img {
+			opacity:1;
+		}
+	}
+}
+.thumb-overlay {
+	position:absolute;
+	left:0;top:0;
+	width:100%;
+	height:100%;
+	background-color:rgba(0,0,0,.3);
+	color:#fff;
+	font-size:.8em;
+	display:none;
+
+	.inner {
+		padding:1em;
+	}
+}
+
+/*
+@media only screen and (min-width: 481px) {
+
+	// styles in 481up.scss
+	@import "breakpoints/481up";
+
+} // end of media query
+
+@media only screen and (min-width: 768px) {
+
+	// styles in 768up.scss
+	@import "breakpoints/768up";
+
+} 
+@media only screen and (min-width: 1030px) {
+
+	// styles in 1030up.scss
+	@import "breakpoints/1030up";
+
+} // end of media query
+
+@media only screen and (min-width: 1240px) {
+
+	// styles in 1240up.scss
+	@import "breakpoints/1240up";
+
+} // end of media query
+*/
