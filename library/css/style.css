@@ -4664,6 +4664,52 @@ input[type="button"].btn-block {
   width: 100%;
 }
 
+/* line 10, ../scss/bootstrap/_component-animations.scss */
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+/* line 13, ../scss/bootstrap/_component-animations.scss */
+.fade.in {
+  opacity: 1;
+}
+
+/* line 18, ../scss/bootstrap/_component-animations.scss */
+.collapse {
+  display: none;
+  visibility: hidden;
+}
+/* line 22, ../scss/bootstrap/_component-animations.scss */
+.collapse.in {
+  display: block;
+  visibility: visible;
+}
+
+/* line 27, ../scss/bootstrap/_component-animations.scss */
+tr.collapse.in {
+  display: table-row;
+}
+
+/* line 29, ../scss/bootstrap/_component-animations.scss */
+tbody.collapse.in {
+  display: table-row-group;
+}
+
+/* line 31, ../scss/bootstrap/_component-animations.scss */
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition-property: height, visibility;
+  transition-property: height, visibility;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+}
+
 /* line 7, ../scss/bootstrap/_input-groups.scss */
 .input-group {
   position: relative;
@@ -6002,33 +6048,28 @@ input[type="button"].btn-block {
     display: none !important;
   }
 }
-/* line 8, ../scss/style.scss */
+/* line 12, ../scss/style.scss */
 #banner {
   padding-bottom: 30px;
 }
 
-/* line 16, ../scss/style.scss */
-#title {
-  font-style: italic;
-}
-
-/* line 19, ../scss/style.scss */
+/* line 15, ../scss/style.scss */
 canvas {
   width: 100%;
   height: 100%;
   display: block;
 }
 
-/* line 25, ../scss/style.scss */
+/* line 21, ../scss/style.scss */
 #image-wrapper {
   position: relative;
   overflow: hidden;
   width: 100%;
   height: auto;
-  padding: 15px 0 30px;
+  padding: 15px 0 0px;
 }
 
-/* line 39, ../scss/style.scss */
+/* line 34, ../scss/style.scss */
 #zoom-wrapper {
   position: absolute;
   left: 0;
@@ -6037,12 +6078,40 @@ canvas {
   height: 100%;
   overflow: hidden;
 }
-/* line 47, ../scss/style.scss */
+/* line 42, ../scss/style.scss */
 #zoom-wrapper.active {
   overflow: scroll;
 }
 
-/* line 56, ../scss/style.scss */
+/* line 51, ../scss/style.scss */
+#image-caption {
+  font-size: .8em;
+  text-align: right;
+  color: #505050;
+  padding: 8px 0;
+}
+
+/* line 58, ../scss/style.scss */
+#title {
+  font-style: italic;
+  margin-top: 5px;
+}
+
+/* line 62, ../scss/style.scss */
+#controls-wrapper {
+  float: right;
+}
+/* line 64, ../scss/style.scss */
+#controls-wrapper .btn {
+  font-size: 20px;
+  color: #000000;
+}
+/* line 67, ../scss/style.scss */
+#controls-wrapper .btn:hover {
+  color: #505050;
+}
+
+/* line 77, ../scss/style.scss */
 #main {
   -webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75);
   -moz-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75);
@@ -6050,7 +6119,7 @@ canvas {
   background-color: #e6e6e6;
 }
 
-/* line 64, ../scss/style.scss */
+/* line 85, ../scss/style.scss */
 .thumb-column {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -6058,7 +6127,7 @@ canvas {
   padding-right: 7.5px;
 }
 
-/* line 71, ../scss/style.scss */
+/* line 92, ../scss/style.scss */
 .thumb {
   width: 100%;
   height: 100%;
@@ -6070,22 +6139,21 @@ canvas {
   -moz-box-shadow: -1px 6px 15px -2px #bebebe inset;
   box-shadow: -1px 6px 15px -2px #bebebe inset;
 }
-/* line 81, ../scss/style.scss */
+/* line 102, ../scss/style.scss */
 .thumb a {
   display: block;
   margin: 0 auto;
 }
-/* line 85, ../scss/style.scss */
+/* line 106, ../scss/style.scss */
 .thumb img {
-  margin: 0 auto;
   opacity: .6;
 }
-/* line 90, ../scss/style.scss */
+/* line 111, ../scss/style.scss */
 .thumb.hover-on img {
   opacity: 1;
 }
 
-/* line 95, ../scss/style.scss */
+/* line 116, ../scss/style.scss */
 .thumb-overlay {
   position: absolute;
   left: 0;
@@ -6097,7 +6165,7 @@ canvas {
   font-size: .8em;
   display: none;
 }
-/* line 105, ../scss/style.scss */
+/* line 126, ../scss/style.scss */
 .thumb-overlay .inner {
   padding: 1em;
 }

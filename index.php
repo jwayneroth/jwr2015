@@ -1,76 +1,99 @@
 <?php get_header(); ?>
 
-			<div id="content">
-
-				<div id="inner-content" class="wrap cf">
-
-						<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
-
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article">
-
-								<header class="article-header">
-
-									<h1 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-									<p class="byline entry-meta vcard">
-                                        				<?php printf( __( 'Posted %1$s by %2$s', 'bonestheme' ),
-                       								/* the time the post was published */
-                       								'<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
-                       								/* the author of the post */
-                       								'<span class="by">by</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</span>'
-                    							); ?>
-									</p>
-
-								</header>
-
-								<section class="entry-content cf">
-									<?php the_content(); ?>
-								</section>
-
-								<footer class="article-footer cf">
-									<p class="footer-comment-count">
-										<?php comments_number( __( '<span>No</span> Comments', 'bonestheme' ), __( '<span>One</span> Comment', 'bonestheme' ), __( '<span>%</span> Comments', 'bonestheme' ) );?>
-									</p>
-
-
-                 	<?php printf( '<p class="footer-category">' . __('filed under', 'bonestheme' ) . ': %1$s</p>' , get_the_category_list(', ') ); ?>
-
-                  <?php the_tags( '<p class="footer-tags tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
-
-
-								</footer>
-
-							</article>
-
-							<?php endwhile; ?>
-
-									<?php bones_page_navi(); ?>
-
-							<?php else : ?>
-
-									<article id="post-not-found" class="hentry cf">
-											<header class="article-header">
-												<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
-										</header>
-											<section class="entry-content">
-												<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
-										</section>
-										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the index.php template.', 'bonestheme' ); ?></p>
-										</footer>
-									</article>
-
-							<?php endif; ?>
-
-
-						</main>
-
-					<?php //get_sidebar(); ?>
-
+	<section id="banner">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<div id="image-wrapper">
+						<div id="canvas-wrapper"></div>
+						<div id="zoom-wrapper"><div id="zoom-inner"></div></div>
+					</div>
 				</div>
-
 			</div>
+			<div class="row">
+				<div class="col-sm-3 col-md-3 col-sm-push-9 col-md-push-9">
+					<div id="controls-wrapper">
+						<button type="button" class="btn btn-default" aria-label="Left Align" id="zoom-button">
+							<span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
+						</button>
+						<button type="button" class="btn btn-default disabled" aria-label="Left Align" id="zoom-close-button">
+							<span class="glyphicon glyphicon-zoom-out" aria-hidden="true"></span>
+						</button>
+						<!--<button type="button" class="btn btn-default" aria-label="Left Align" id="zoom-close-button">
+							<span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+						</button>-->
+					</div>
+				</div>
+				<div class="col-sm-9 col-md-9 col-sm-pull-3 col-md-pull-3">
+					<div class="row">
+						<div class="col-sm-4">
+							<h3 class="" id="title">Jonathan Roth</h3>
+						</div>
+						<div class="col-sm-8">
+							<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+							<?php wp_nav_menu(array(
+								'container' => false,
+								'container_class' => '',
+								'menu' => __( 'The Main Menu', 'bonestheme' ),
+								'menu_class' => 'nav',
+								'theme_location' => 'main-nav', 
+								'before' => '', 
+								'after' => '',
+								'link_before' => '', 
+								'link_after' => '',
+								'depth' => 0,
+								'fallback_cb' => ''
+							)); ?>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section id="main">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-12">
+					<div id="thumb-wrapper">
 
+					<?php $posts = get_posts(array( 'posts_per_page' => -1 )); ?>
+					<?php $cnt = 0; ?>
+					<?php foreach($posts as $post) : setup_postdata($post); ?>
+								
+						<?php if($cnt == 0): ?>
+						<div class="row">
+						<?php endif; ?>
+						
+						<?php $featured_img_id = get_post_thumbnail_id(); ?>
+						<?php $thumb_src = wp_get_attachment_image_src( $featured_img_id, 'painting-thumb' ); ?>
+						<?php $full_src = wp_get_attachment_image_src( $featured_img_id, 'painting-full'); ?>
+						<?php $zoom_src  = wp_get_attachment_image_src( $featured_img_id, 'painting-zoom'); ?>
+						
+							<div class="col-xs-4 col-sm-2 thumb-column">
+								<div class="thumb">
+									<a href="<?php echo $full_src[0]; ?>" style="width:<?php echo $thumb_src[1]; ?>px;" data-zoom="<?php echo $zoom_src[0]; ?>"><img src="<?php echo $thumb_src[0]; ?>" width="<?php echo $thumb_src[1]; ?>" height="<?php echo $thumb_src[2]; ?>" alt=""></a>
+									<div class="thumb-overlay">
+										<div class="inner"><?php the_content(); ?>
+										</div>
+									</div>
+								</div>
+							</div>
+								
+						<?php $cnt++; if($cnt >= 6): $cnt = 0; ?>
+						</div><!--end thumb-row-->
+						<?php endif; ?>
+						
+					<?php endforeach; ?>
+					
+					<?php if ($cnt != 0): ?>
+					</div><!--end thumb-row-->
+					<?php endif; ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 <?php get_footer(); ?>

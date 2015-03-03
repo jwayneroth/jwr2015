@@ -18,16 +18,19 @@ jQuery(document).ready(function($) {
 	//thumb click loads full img into canvas
 	//also sets zoom prop on zoom button
 	$('#thumb-wrapper a').click(function(evt) {
-		//console.log(evt);
+
 		evt.preventDefault();
 		
-		//TODO: show overlay on selected thumb
-		//TODO: add ptg info below canvas
+		$('.thumb-overlay').hide();
 		
+		var $thumb = $(evt.currentTarget);
+		var $overlay = $thumb.siblings('.thumb-overlay');
 		
-		JWR.BGExpand.loadImage(evt.currentTarget.href);
+		$('#image-caption').html( $thumb.data('caption') );
+		$overlay.show();
+		JWR.BGExpand.loadImage( $thumb.attr('href') );
 		JWR.Zoom.checkClose();
-		JWR.Zoom.setZoomButtonTarget( $(evt.currentTarget).data('zoom') );
+		JWR.Zoom.setZoomButtonTarget( $thumb.data('zoom') );
 		
 		return false;
 

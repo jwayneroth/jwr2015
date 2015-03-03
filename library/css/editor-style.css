@@ -4664,6 +4664,52 @@ input[type="button"].btn-block {
   width: 100%;
 }
 
+/* line 10, ../scss/bootstrap/_component-animations.scss */
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+/* line 13, ../scss/bootstrap/_component-animations.scss */
+.fade.in {
+  opacity: 1;
+}
+
+/* line 18, ../scss/bootstrap/_component-animations.scss */
+.collapse {
+  display: none;
+  visibility: hidden;
+}
+/* line 22, ../scss/bootstrap/_component-animations.scss */
+.collapse.in {
+  display: block;
+  visibility: visible;
+}
+
+/* line 27, ../scss/bootstrap/_component-animations.scss */
+tr.collapse.in {
+  display: table-row;
+}
+
+/* line 29, ../scss/bootstrap/_component-animations.scss */
+tbody.collapse.in {
+  display: table-row-group;
+}
+
+/* line 31, ../scss/bootstrap/_component-animations.scss */
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition-property: height, visibility;
+  transition-property: height, visibility;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+}
+
 /* line 7, ../scss/bootstrap/_input-groups.scss */
 .input-group {
   position: relative;

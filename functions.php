@@ -102,7 +102,7 @@ function bones_register_sidebars() {
 //  JWR
 ///////////////////////////////////////
 
-add_image_size( 'painting-zoom', 1500 );
+add_image_size( 'painting-zoom', 1120 );
 add_image_size( 'painting-full', 700, 600 );
 add_image_size( 'painting-thumb', 95 );
 
@@ -112,6 +112,7 @@ function jwr_page_scripts() {
 	wp_register_style('libre-baskerville', 'http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic', array(), '', 'all' );
 
 	//scripts
+	wp_register_script('bootstrap', get_stylesheet_directory_uri() . '/library/js/libs/bootstrap.min.js', array('jquery'));
 	wp_register_script('jwr-bgexpand', get_stylesheet_directory_uri() . '/library/js/BGExpand.js', array('jquery'));
 	wp_register_script('jwr-main', get_stylesheet_directory_uri() . '/library/js/main.js', array('jquery'));
 	wp_register_script('jwr-timebg', get_stylesheet_directory_uri() . '/library/js/TimeBG.js', array('jquery'));
@@ -124,6 +125,7 @@ function jwr_page_scripts() {
 	
 	if(!is_admin()) {
 		//all frontend
+		wp_enqueue_script('bootstrap');
 		wp_enqueue_script('jwr-bgexpand');
 		wp_enqueue_script('jwr-main');
 		wp_enqueue_script('jwr-timebg');
@@ -132,6 +134,141 @@ function jwr_page_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'jwr_page_scripts' );
+
+///////////////////
+// POST TYPES
+/////////////////
+
+function jwr_flush_rewrite_rules() {
+	flush_rewrite_rules();
+}
+add_action( 'after_switch_theme', 'jwr_flush_rewrite_rules' );
+
+function jwr_custom_post_types() { 
+
+	register_post_type( 'artwork', 
+		array( 'labels' => array(
+			'name' => __( 'Artworks', 'bonestheme' ), 
+			'singular_name' => __( 'Artwork', 'bonestheme' ), 
+			'all_items' => __( 'All Artworks', 'bonestheme' ), 
+			'add_new' => __( 'Add New', 'bonestheme' ), 
+			'add_new_item' => __( 'Add New Artwork', 'bonestheme' ), 
+			'edit' => __( 'Edit', 'bonestheme' ), 
+			'edit_item' => __( 'Edit Artworks', 'bonestheme' ),
+			'new_item' => __( 'New Artwork', 'bonestheme' ), 
+			'view_item' => __( 'View Artwork', 'bonestheme' ),
+			'search_items' => __( 'Search Artwork', 'bonestheme' ),
+			'not_found' =>  __( 'Nothing found in the Database.', 'bonestheme' ), 
+			'not_found_in_trash' => __( 'Nothing found in Trash', 'bonestheme' ), 
+			'parent_item_colon' => ''
+			), 
+			'description' => __( 'jwr artwork!', 'bonestheme' ), 
+			'public' => true,
+			'publicly_queryable' => true,
+			'exclude_from_search' => false,
+			'show_ui' => true,
+			'query_var' => true,
+			'menu_position' => 2, 
+			'menu_icon' => get_stylesheet_directory_uri() . '/library/images/custom-post-icon.png',
+			'rewrite'	=> array( 'slug' => 'artwork', 'with_front' => false ), 
+			'has_archive' => 'artwork',
+			'capability_type' => 'post',
+			'hierarchical' => false,
+			'supports' => array( 
+				'title'
+				//,'editor'
+				,'author'
+				,'thumbnail'
+				//,'excerpt'
+				,'trackbacks'
+				//'custom-fields',
+				//'comments',
+				,'revisions'
+				//'sticky'
+			)
+		) 
+	);
+	
+	register_taxonomy_for_object_type( 'category', 'custom_type' );
+	register_taxonomy_for_object_type( 'post_tag', 'custom_type' );
+	
+}
+add_action( 'init', 'jwr_custom_post_types');
+
+//////////////
+// CMB2
+////////////
+
+//get bootstrap
+if ( file_exists(  __DIR__ . '/cmb2/init.php' ) ) {
+  require_once  __DIR__ . '/cmb2/init.php';
+} elseif ( file_exists(  __DIR__ . '/CMB2/init.php' ) ) {
+  require_once  __DIR__ . '/CMB2/init.php';
+}
+
+function jwr_cmb2_fields( array $meta_boxes ) {
+
+	$prefix = '_artwork_';
+
+	$meta_boxes['artwork_details'] = array(
+		'id'            => 'artwork_details',
+		'title'         => __( 'Artwork Details', 'cmb2' ),
+		'object_types'  => array( 'artwork', ), // Post type
+		'context'       => 'normal',
+		'priority'      => 'high',
+		'show_names'    => true, // Show field names on the left
+		// 'cmb_styles' => false, // false to disable the CMB stylesheet
+		// 'closed'     => true, // Keep the metabox closed by default
+		'fields'        => array(
+			array(
+				'name'       => __( 'Title', 'cmb2' ),
+				'desc'       => __( 'title', 'cmb2' ),
+				'id'         => $prefix . 'title',
+				'type'       => 'text',
+				'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
+				// 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
+				// 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
+				// 'on_front'        => false, // Optionally designate a field to wp-admin only
+				// 'repeatable'      => true,
+			),
+			array(
+				'name'       => __( 'Year', 'cmb2' ),
+				'desc'       => __( 'year', 'cmb2' ),
+				'id'         => $prefix . 'year',
+				'type'       => 'text',
+				'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
+				// 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
+				// 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
+				// 'on_front'        => false, // Optionally designate a field to wp-admin only
+				// 'repeatable'      => true,
+			),
+			array(
+				'name'       => __( 'Dimensions', 'cmb2' ),
+				'desc'       => __( 'dimensions', 'cmb2' ),
+				'id'         => $prefix . 'dimensions',
+				'type'       => 'text',
+				'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
+				// 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
+				// 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
+				// 'on_front'        => false, // Optionally designate a field to wp-admin only
+				// 'repeatable'      => true,
+			),
+			array(
+				'name'       => __( 'Materials', 'cmb2' ),
+				'desc'       => __( 'materials', 'cmb2' ),
+				'id'         => $prefix . 'materials',
+				'type'       => 'text',
+				'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
+				// 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
+				// 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
+				// 'on_front'        => false, // Optionally designate a field to wp-admin only
+				// 'repeatable'      => true,
+			)
+		),
+	);
+	return $meta_boxes;
+}
+add_filter( 'cmb2_meta_boxes', 'jwr_cmb2_fields' );
 
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
