@@ -61,7 +61,9 @@ canvas {
 }
 #controls-wrapper {
 	float:right;
+	
 	.btn {
+		//float:right;
 		font-size:20px;
 		color: $black;
 		&:hover {
@@ -75,12 +77,16 @@ canvas {
 //
 /////////////////////////
 #main {
-	@include even-shadow;
-	background-color: rgb(230,230,230);
+	//@include even-shadow;
+	//background-color: rgb(230,230,230);
+	padding-bottom: 4em;
 }
 
 
-#thumb-wrapper {}
+.thumb-row {
+	border-top:1px solid rgb(100,90,100);
+	border-bottom:1px solid rgb(100,90,100);
+}
 
 .thumb-column {
 	padding-top: $grid-gutter-width / 2;
@@ -98,6 +104,7 @@ canvas {
 	-webkit-box-shadow: -1px 6px 15px -2px  rgb(190,190,190) inset;
 	-moz-box-shadow:   -1px 6px 15px -2px  rgb(190,190,190) inset;
 	box-shadow:         -1px 6px 15px -2px  rgb(190,190,190) inset;
+	border-radius: 2px;
 	
 	a {
 		display:block;
@@ -122,12 +129,62 @@ canvas {
 	color:#fff;
 	font-size:.8em;
 	display:none;
-
+	border-radius:2px;
+	
 	.inner {
 		padding:1em;
 	}
 }
 
+#contact-wrapper {
+	text-align:center;
+
+	ul.gform_fields {
+		width:100%;
+
+		li.gfield {
+			width:49%;
+			margin-bottom: 1.3em;
+			float:left;
+			clear:none;
+			
+			&#field_1_2 { //,&:nth-child(2) {
+				float:right;
+			}
+			&.gfield_error.gfield_contains_required {
+				margin-top:0;
+			}
+		
+			&#field_1_3 {
+				width:100%; 
+				clear:both; 
+			}
+		
+			input {
+				//border: 1px solid $black;
+				//height:37px;
+			}
+		}
+	}
+	//submit button
+	.gform_footer {
+		clear:none;
+	
+		input {
+			@extend .btn;
+			/*float:right;
+			width:49%;
+			clear:none;
+			height: 37px;
+			line-height:37px;
+			border:none;
+			outline:none;
+			font-size: .86em;
+			color: $white;*/
+		}
+	}
+
+}
 /*
 @media only screen and (min-width: 481px) {
 

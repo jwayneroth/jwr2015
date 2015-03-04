@@ -16,8 +16,8 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-3 col-md-3 col-sm-push-9 col-md-push-9">
-					<div id="controls-wrapper">
+				<div class="col-xs-4 col-md-4 col-xs-push-8 col-md-push-8">
+					<div class="clearfix" id="controls-wrapper">
 						<button type="button" class="btn btn-link" aria-label="Left Align" id="zoom-button">
 							<span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
 						</button>
@@ -29,14 +29,15 @@
 						</button>-->
 					</div>
 				</div>
-				<div class="col-sm-9 col-md-9 col-sm-pull-3 col-md-pull-3">
+				<div class="col-xs-8 col-md-8 col-xs-pull-4 col-md-pull-4">
 					<div class="row">
 						<div class="col-sm-5">
 							<h3 class="" id="title">Jonathan Roth</h3>
 						</div>
 						<div class="col-sm-7">
 							<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-							<?php wp_nav_menu(array(
+								<!--<button class="btn btn-link h3" type="button" data-toggle="collapse" data-target="#contact-wrapper">Contact</button>-->
+								<?php /*wp_nav_menu(array(
 								'container' => false,
 								'container_class' => '',
 								'menu' => __( 'The Main Menu', 'bonestheme' ),
@@ -48,7 +49,7 @@
 								'link_after' => '',
 								'depth' => 0,
 								'fallback_cb' => ''
-							)); ?>
+								));*/ ?>
 							</nav>
 						</div>
 					</div>
@@ -59,7 +60,7 @@
 	
 	<section id="main">
 		<div class="container">
-			<div class="row">
+			<div class="row thumb-row">
 				<div class="col-xs-12 col-md-12">
 					<div id="thumb-wrapper">
 
@@ -104,8 +105,8 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-12">
-					<button class="btn btn-link h3" type="button" data-toggle="collapse" data-target="#contact-wrapper">Contact</button>
+				<div class="col-sm-6">
+					<button class="btn btn-default h3" type="button" data-toggle="collapse" data-target="#contact-wrapper">Contact</button>
 					<div class="collapse" id="contact-wrapper">
 						<?php gravity_form( 1, false, false, false, null, true ); ?>
 					</div>

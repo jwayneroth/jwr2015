@@ -101,10 +101,8 @@ var JWR = JWR || {};
 		
 		//$('#wrapper-all').attr('style', bg);
 		$('#banner').attr('style', bg);
-		//$('#main').css('background-color', 'rgb(' + this.stop2.r + ',' + this.stop2.g + ',' + this.stop2.b + ')');
-		//var mainBG = JWR.ColorUtils.getComplement(this.stop2);
-		//console.log(mainBG);
-		//$('#main').css('background-color', 'rgb(' + mainBG.r + ',' + mainBG.g + ',' + mainBG.b + ')');
+		$('body').css('background-color', 'rgb(' + this.stop2.r + ',' + this.stop2.g + ',' + this.stop2.b + ')');
+
 	};
 
 	JWR.TimeBG = TimeBG;
