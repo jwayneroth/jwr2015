@@ -45,6 +45,8 @@ var JWR = JWR || {};
 		
 		if(this.currentImageName == name) return;
 		
+		JWR.Loader.show();
+		
 		if(this.images[name]) {
 			console.log('have '+name+' already');
 			this.currentImageName = name;
@@ -141,7 +143,9 @@ var JWR = JWR || {};
 		this.el.html(canvas);
 		
 		//this.el.append('<img src="'+image.src+'" width="'+image.width+'" height="'+image.height+'" style="position:absolute;left:'+pos.dx+'px;top:'+pos.dy+'px;" />');
-	
+		
+		JWR.Loader.hide();
+		
 	};
 	
 	/*
