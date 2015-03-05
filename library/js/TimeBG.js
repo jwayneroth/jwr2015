@@ -62,36 +62,38 @@ var JWR = JWR || {};
 		
 		//console.log('r: ' + this.stop2.r + ' g: ' + this.stop2.g + ' b: ' + this.stop2.b);
 		
-		wbk = 'background:-webkit-gradient(linear,left top, left bottom,';
+		//wbk = 'background:-webkit-gradient(linear,left top, left bottom,';
 		vs = '(top,';
 		
-		wbk += 'color-stop(10%, rgb(' + 
+		/*wbk += 'color-stop(10%, rgb(' + 
 			this.stop1.r + ',' + 
 			this.stop1.g + ',' + 
-			this.stop1.b + ')),';
+			this.stop1.b + ')),';*/
 			
 		vs += 'rgb(' + 
 			this.stop1.r + ',' +
 			this.stop1.g + ',' +
 			this.stop1.b + ') 10%, ';
 			
-		wbk += 'color-stop(100%, rgb(' + 
+		/*wbk += 'color-stop(100%, rgb(' + 
 			this.stop2.r + ',' + 
 			this.stop2.g + ',' + 
-			this.stop2.b + ')));';
+			this.stop2.b + ')));';*/
 			
 		vs += 'rgb(' + 
 			this.stop2.r + ',' +
 			this.stop2.g + ',' +
 			this.stop2.b + ') 100%)';
 		
-		var browsers = ['-moz-linear-gradient',
+		var browsers = [
 			'-webkit-linear-gradient',
 			'-o-linear-gradient',
-			'-ms-linear-gradient',
-			'linear-gradient'];
+			'-moz-linear-gradient',
+			//'-ms-linear-gradient',
+			'linear-gradient'
+		];
 		
-		bg = wbk;
+		bg = '';//wbk;
 		
 		for(var i=0;i<browsers.length;i++) {
 			bg += 'background:' + browsers[i] + vs + ';';

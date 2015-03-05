@@ -7,6 +7,7 @@ var JWR = JWR || {};
 	BGExpand.inited = false;
 	BGExpand.el = null;
 	BGExpand.currentImageName = null;
+	BGExpand.canvas = null;
 	BGExpand.canvasMaxW = 1140;//900;//$(window).width();//900;
 	BGExpand.canvasMaxH = 720;//$(window).height();//720;
 	BGExpand.images = null;
@@ -22,6 +23,7 @@ var JWR = JWR || {};
 		if(!this.inited) {
 			this.inited = false;
 			this.el = $('#canvas-wrapper');
+			this.canvas = document.getElementById('jwr-canvas');
 			this.images = {};
 		}
 		
@@ -45,14 +47,14 @@ var JWR = JWR || {};
 		
 		if(this.currentImageName == name) return;
 		
-		JWR.Loader.show();
-		
 		if(this.images[name]) {
 			console.log('have '+name+' already');
 			this.currentImageName = name;
 			this.renderImage(this.images[name])
 			return;
 		}
+		
+		JWR.Loader.show();
 		
 		image = new Image();
 		image.src = src;
@@ -112,12 +114,9 @@ var JWR = JWR || {};
 		
 		//console.log('BGExpand:renderImage', image);
 		
-		var canvas = document.createElement('canvas');
+		var canvas  = this.canvas;
 		
-		canvas.width = this.canvasMaxW;
-		canvas.height = this.canvasMaxH;
-		
-		context = canvas.getContext("2d");
+		var context = canvas.getContext("2d");
 		
 		var pos = this.centerImage(image.width,image.height,canvas.width,canvas.height);
 		
@@ -466,6 +465,7 @@ var JWR = JWR || {};
 		
 	/*
 	 * centerImage
+	 * image-width, image-height, canvas-width, canvas-height
 	*/
 	BGExpand.centerImage = function(iw,ih,cw,ch) {
 		

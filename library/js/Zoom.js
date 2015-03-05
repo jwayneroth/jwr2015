@@ -82,6 +82,8 @@ var JWR = JWR || {};
 		
 		if(!imgName) return;
 		
+		JWR.Loader.show();
+
 		console.log('Zoom:loadImage: ' + imgName);
 		
 		var image = new Image();
@@ -101,6 +103,9 @@ var JWR = JWR || {};
 			.html('<img src="' + this.currentImage.src + '" width="' + this.currentImage.width + '" height="' + this.currentImage.height + '">');
 		this.el
 			.addClass('active');
+	
+		JWR.Loader.hide();
+
 	}
 	
 	JWR.Zoom = Zoom;

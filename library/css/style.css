@@ -6082,10 +6082,11 @@ tbody.collapse.in {
 canvas {
   width: 100%;
   height: 100%;
+  background-color: #8c8c8c;
   display: block;
 }
 
-/* line 21, ../scss/style.scss */
+/* line 22, ../scss/style.scss */
 #image-wrapper {
   position: relative;
   overflow: hidden;
@@ -6094,7 +6095,7 @@ canvas {
   padding: 15px 0 0px;
 }
 
-/* line 34, ../scss/style.scss */
+/* line 35, ../scss/style.scss */
 #zoom-wrapper {
   position: absolute;
   left: 0;
@@ -6103,12 +6104,12 @@ canvas {
   height: 100%;
   overflow: hidden;
 }
-/* line 42, ../scss/style.scss */
+/* line 43, ../scss/style.scss */
 #zoom-wrapper.active {
   overflow: scroll;
 }
 
-/* line 51, ../scss/style.scss */
+/* line 52, ../scss/style.scss */
 #image-loader {
   position: absolute;
   left: 0;
@@ -6117,16 +6118,16 @@ canvas {
   height: 100%;
   overflow: hidden;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.4);
   display: none;
 }
-/* line 62, ../scss/style.scss */
+/* line 63, ../scss/style.scss */
 #image-loader img {
   position: relative;
   top: 50%;
 }
 
-/* line 67, ../scss/style.scss */
+/* line 68, ../scss/style.scss */
 #image-caption {
   font-size: .8em;
   text-align: right;
@@ -6134,44 +6135,44 @@ canvas {
   padding: 8px 0;
 }
 
-/* line 74, ../scss/style.scss */
+/* line 75, ../scss/style.scss */
 #title {
   font-style: italic;
   margin-top: 5px;
 }
 
-/* line 78, ../scss/style.scss */
+/* line 79, ../scss/style.scss */
 #controls-wrapper {
   float: right;
 }
-/* line 81, ../scss/style.scss */
+/* line 82, ../scss/style.scss */
 #controls-wrapper .btn, #controls-wrapper #contact-wrapper .gform_footer input, #contact-wrapper .gform_footer #controls-wrapper input {
   font-size: 20px;
   color: #323944;
 }
-/* line 85, ../scss/style.scss */
+/* line 86, ../scss/style.scss */
 #controls-wrapper .btn:hover, #controls-wrapper #contact-wrapper .gform_footer input:hover, #contact-wrapper .gform_footer #controls-wrapper input:hover {
   color: #505050;
 }
 
-/* line 95, ../scss/style.scss */
+/* line 96, ../scss/style.scss */
 #main {
   padding-bottom: 4em;
 }
 
-/* line 102, ../scss/style.scss */
+/* line 103, ../scss/style.scss */
 .thumb-row {
   border-top: 1px solid #645a64;
   border-bottom: 1px solid #645a64;
 }
 
-/* line 107, ../scss/style.scss */
+/* line 108, ../scss/style.scss */
 .thumb-column {
   padding-top: 15px;
   padding-bottom: 15px;
 }
 
-/* line 114, ../scss/style.scss */
+/* line 115, ../scss/style.scss */
 .thumb {
   width: 100%;
   height: 100px;
@@ -6183,22 +6184,23 @@ canvas {
   -moz-box-shadow: -1px 6px 15px -2px #bebebe inset;
   box-shadow: -1px 6px 15px -2px #bebebe inset;
   border-radius: 2px;
+  cursor: pointer;
 }
-/* line 125, ../scss/style.scss */
+/* line 127, ../scss/style.scss */
 .thumb a {
   display: block;
   margin: 0 auto;
 }
-/* line 129, ../scss/style.scss */
+/* line 131, ../scss/style.scss */
 .thumb img {
   opacity: .6;
 }
-/* line 134, ../scss/style.scss */
+/* line 136, ../scss/style.scss */
 .thumb.hover-on img {
   opacity: 1;
 }
 
-/* line 139, ../scss/style.scss */
+/* line 141, ../scss/style.scss */
 .thumb-overlay {
   position: absolute;
   left: 0;
@@ -6211,49 +6213,49 @@ canvas {
   display: none;
   border-radius: 2px;
 }
-/* line 150, ../scss/style.scss */
+/* line 152, ../scss/style.scss */
 .thumb-overlay .inner {
   padding: 1em;
 }
 
-/* line 155, ../scss/style.scss */
+/* line 157, ../scss/style.scss */
 #contact-wrapper {
   text-align: center;
 }
-/* line 158, ../scss/style.scss */
+/* line 160, ../scss/style.scss */
 #contact-wrapper ul.gform_fields {
   width: 100%;
 }
-/* line 161, ../scss/style.scss */
+/* line 163, ../scss/style.scss */
 #contact-wrapper ul.gform_fields li.gfield {
   width: 49%;
   margin-bottom: 1.3em;
   float: left;
   clear: none;
 }
-/* line 167, ../scss/style.scss */
+/* line 169, ../scss/style.scss */
 #contact-wrapper ul.gform_fields li.gfield#field_1_2 {
   float: right;
 }
-/* line 170, ../scss/style.scss */
+/* line 172, ../scss/style.scss */
 #contact-wrapper ul.gform_fields li.gfield.gfield_error.gfield_contains_required {
   margin-top: 0;
 }
-/* line 174, ../scss/style.scss */
+/* line 176, ../scss/style.scss */
 #contact-wrapper ul.gform_fields li.gfield#field_1_3 {
   width: 100%;
   clear: both;
 }
-/* line 179, ../scss/style.scss */
+/* line 181, ../scss/style.scss */
 #contact-wrapper ul.gform_fields li.gfield input, #contact-wrapper ul.gform_fields li.gfield textarea {
   border: 1px solid #645a64;
   border-radius: 4px;
 }
-/* line 188, ../scss/style.scss */
+/* line 190, ../scss/style.scss */
 #contact-wrapper .gform_footer {
   clear: none;
 }
-/* line 191, ../scss/style.scss */
+/* line 193, ../scss/style.scss */
 #contact-wrapper .gform_footer input {
   /*float:right;
   width:49%;
@@ -6265,7 +6267,7 @@ canvas {
   font-size: .86em;
   color: $white;*/
 }
-/* line 205, ../scss/style.scss */
+/* line 207, ../scss/style.scss */
 #contact-wrapper #gforms_confirmation_message {
   margin: 2em 0;
 }

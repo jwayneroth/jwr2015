@@ -5,7 +5,7 @@
 			<div class="row">
 				<div class="col-md-12 text-center">
 					<div id="image-wrapper">
-						<div id="canvas-wrapper"></div>
+						<div id="canvas-wrapper"><canvas width="1140" height="720" id="jwr-canvas"></canvas></div>
 						<div id="zoom-wrapper">
 							<div id="zoom-inner"></div>
 						</div>
@@ -117,7 +117,7 @@
 			</div>
 			<div class="row">
 				<div class="col-sm-6">
-					<button class="btn btn-default h3" type="button" data-toggle="collapse" data-target="#contact-wrapper" id="contact-me-btn">Contact Me</button>
+					<button class="btn btn-default h3" type="button" data-toggle="collapse" data-target="#contact-wrapper" id="contact-me-btn">contact me</button>
 					<div class="collapse" id="contact-wrapper">
 						<?php gravity_form( 1, false, false, false, null, true ); ?>
 					</div>

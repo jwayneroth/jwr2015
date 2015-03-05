@@ -5,7 +5,7 @@
 			<div class="row">
 				<div class="col-md-12 text-center">
 					<div id="image-wrapper">
-						<div id="canvas-wrapper"></div>
+						<div id="canvas-wrapper"><canvas width="1140" height="720" bgcolor="#888888"></canvas></div>
 						<div id="zoom-wrapper"><div id="zoom-inner"></div></div>
 					</div>
 				</div>

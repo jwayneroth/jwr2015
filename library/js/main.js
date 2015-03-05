@@ -28,12 +28,12 @@ jQuery(document).ready(function($) {
 	
 	JWR.BGExpand.init();
 	JWR.Zoom.init();
-	JWR.TimeBG.init();
+	if(Modernizr.cssgradients) JWR.TimeBG.init();
 	JWR.Loader.init();
 	
 	$('#contact-wrapper').on('shown.bs.collapse', function() {
 		window.scrollTo(0,document.body.scrollHeight);
-		$('#contact-me-btn').text('Hide Form');
+		$('#contact-me-btn').text('hide form');
 	});
 	
 	$('#contact-wrapper').on('hidden.bs.collapse', function() {
@@ -47,29 +47,36 @@ jQuery(document).ready(function($) {
 		$(evt.currentTarget).removeClass('hover-on');
 	});
 	
-	//thumb click loads full img into canvas
-	//also sets zoom prop on zoom button
-	$('#thumb-wrapper a').click(function(evt) {
-
-		evt.preventDefault();
-		
-		$('.thumb-overlay').hide();
-		
-		var $thumb = $(evt.currentTarget);
-		var $overlay = $thumb.siblings('.thumb-overlay');
-		
-		$('#image-caption').html( $thumb.data('caption') );
-		$overlay.show();
-		JWR.BGExpand.loadImage( $thumb.attr('href') );
-		JWR.Zoom.checkClose();
-		JWR.Zoom.setZoomButtonTarget( $thumb.data('zoom') );
-		
-		window.scrollTo(0,0);
-		
-		return false;
-
-	});
+	//console.log(Modernizr);
 	
-	$('#thumb-wrapper a').first().click();
+	if(Modernizr.canvas) {
+	
+		//thumb click loads full img into canvas
+		//also sets zoom prop on zoom button
+		$('.thumb').click(function(evt) {
 
+			evt.preventDefault();
+		
+			$('.thumb-overlay').hide();
+		
+			var $thumb = $(evt.currentTarget).children('a');
+			var $overlay = $thumb.siblings('.thumb-overlay');
+		
+			$('#image-caption').html( $thumb.data('caption') );
+			$overlay.show();
+			JWR.BGExpand.loadImage( $thumb.attr('href') );
+			JWR.Zoom.checkClose();
+			JWR.Zoom.setZoomButtonTarget( $thumb.data('zoom') );
+		
+			window.scrollTo(0,0);
+		
+			return false;
+
+		});
+	
+		$('.thumb').first().click();
+
+	}else{
+		$('#jwr-canvas, #controls-wrapper').hide();
+	}
 });
