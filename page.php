@@ -89,12 +89,12 @@
 								<div class="thumb">
 									<a href="<?php echo $full_src[0]; ?>" style="width:<?php echo $thumb_src[1]; ?>px;" 
 										data-zoom="<?php echo $zoom_src[0]; ?>"
-										data-caption="<?php echo $art_title . ', ' . $art_year . ', ' . $art_dimensions . ', ' . $art_materials; ?>">
-										<img src="<?php echo $thumb_src[0]; ?>" width="<?php echo $thumb_src[1]; ?>" height="<?php echo $thumb_src[2]; ?>" alt="<?php echo $art_title; ?>" style="margin-top:<?php echo $col_top; ?>px;"></a>
+										data-caption="<?php echo $art_title . ', ' . $art_year . ', ' . $art_dimensions . ', ' . $art_materials; ?>"><img src="<?php echo $thumb_src[0]; ?>" width="<?php echo $thumb_src[1]; ?>" height="<?php echo $thumb_src[2]; ?>" alt="<?php echo $art_title; ?>" style="margin-top:<?php echo $col_top; ?>px;"></a>
 									<div class="thumb-overlay">
 										<div class="inner"><?php echo $art_title . ', ' . $art_year . '<br>' . $art_dimensions . '<br>' . $art_materials; ?></div>
 									</div>
 								</div>
+								<?php edit_post_link(); ?>
 							</div>
 								
 						<?php $cnt++; ?>
