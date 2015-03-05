@@ -80,19 +80,27 @@
 						<?php $art_year = get_post_meta( get_the_ID(), '_artwork_year', true ); ?>
 						<?php $art_dimensions = get_post_meta( get_the_ID(), '_artwork_dimensions', true ); ?>
 						<?php $art_materials = get_post_meta( get_the_ID(), '_artwork_materials', true ); ?>
+						<?php $col_top = (100 - $thumb_src[2]) / 2; ?>
 						
 							<div class="col-xs-4 col-sm-2 thumb-column">
 								<div class="thumb">
 									<a href="<?php echo $full_src[0]; ?>" style="width:<?php echo $thumb_src[1]; ?>px;" 
 										data-zoom="<?php echo $zoom_src[0]; ?>"
-										data-caption="<?php echo $art_title . ', ' . $art_year . ', ' . $art_dimensions . ', ' . $art_materials; ?>"><img src="<?php echo $thumb_src[0]; ?>" width="<?php echo $thumb_src[1]; ?>" height="<?php echo $thumb_src[2]; ?>" alt=""></a>
+										data-caption="<?php echo $art_title . ', ' . $art_year . ', ' . $art_dimensions . ', ' . $art_materials; ?>">
+										<img src="<?php echo $thumb_src[0]; ?>" width="<?php echo $thumb_src[1]; ?>" height="<?php echo $thumb_src[2]; ?>" alt="<?php echo $art_title; ?>" style="margin-top:<?php echo $col_top; ?>px;"></a>
 									<div class="thumb-overlay">
 										<div class="inner"><?php echo $art_title . ', ' . $art_year . '<br>' . $art_dimensions . '<br>' . $art_materials; ?></div>
 									</div>
 								</div>
 							</div>
 								
-						<?php $cnt++; if($cnt >= 6): $cnt = 0; ?>
+						<?php $cnt++; ?>
+						
+						<?php if($cnt == 3) : ?>
+						<div class="clearfix visible-xs-block"></div>
+						<?php endif; ?>
+						
+						<?php if($cnt >= 6): $cnt = 0; ?>
 						</div><!--end thumb-row-->
 						<?php endif; ?>
 						

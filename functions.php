@@ -104,7 +104,7 @@ function bones_register_sidebars() {
 
 add_image_size( 'painting-zoom', 1120 );
 add_image_size( 'painting-full', 700, 600 );
-add_image_size( 'painting-thumb', 95 );
+add_image_size( 'painting-thumb', 95, 100 );
 
 function jwr_page_scripts() {
 	//styles
