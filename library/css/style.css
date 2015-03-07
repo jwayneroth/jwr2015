@@ -6214,58 +6214,59 @@ canvas {
   padding: 1em;
 }
 
-/* line 166, ../scss/style.scss */
-#footer {
-  padding: 30px 0;
+/* line 167, ../scss/style.scss */
+#footer .row {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
-/* line 170, ../scss/style.scss */
+/* line 173, ../scss/style.scss */
 nav {
   font-size: .9em;
 }
 
-/* line 174, ../scss/style.scss */
+/* line 177, ../scss/style.scss */
 #contact-wrapper {
   text-align: center;
 }
-/* line 177, ../scss/style.scss */
+/* line 180, ../scss/style.scss */
 #contact-wrapper .row {
   border-top: 1px solid #645a64;
 }
-/* line 180, ../scss/style.scss */
+/* line 183, ../scss/style.scss */
 #contact-wrapper ul.gform_fields {
   width: 100%;
 }
-/* line 183, ../scss/style.scss */
+/* line 186, ../scss/style.scss */
 #contact-wrapper ul.gform_fields li.gfield {
   width: 49%;
   margin-bottom: 1.3em;
   float: left;
   clear: none;
 }
-/* line 189, ../scss/style.scss */
+/* line 192, ../scss/style.scss */
 #contact-wrapper ul.gform_fields li.gfield#field_1_2 {
   float: right;
 }
-/* line 192, ../scss/style.scss */
+/* line 195, ../scss/style.scss */
 #contact-wrapper ul.gform_fields li.gfield.gfield_error.gfield_contains_required {
   margin-top: 0;
 }
-/* line 196, ../scss/style.scss */
+/* line 199, ../scss/style.scss */
 #contact-wrapper ul.gform_fields li.gfield#field_1_3 {
   width: 100%;
   clear: both;
 }
-/* line 201, ../scss/style.scss */
+/* line 204, ../scss/style.scss */
 #contact-wrapper ul.gform_fields li.gfield input, #contact-wrapper ul.gform_fields li.gfield textarea {
   border: 1px solid #645a64;
   border-radius: 4px;
 }
-/* line 210, ../scss/style.scss */
+/* line 213, ../scss/style.scss */
 #contact-wrapper .gform_footer {
   clear: none;
 }
-/* line 213, ../scss/style.scss */
+/* line 216, ../scss/style.scss */
 #contact-wrapper .gform_footer input {
   /*float:right;
   width:49%;
@@ -6277,7 +6278,7 @@ nav {
   font-size: .86em;
   color: $white;*/
 }
-/* line 227, ../scss/style.scss */
+/* line 230, ../scss/style.scss */
 #contact-wrapper #gforms_confirmation_message {
   margin: 2em 0;
 }

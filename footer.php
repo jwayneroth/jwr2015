@@ -2,7 +2,7 @@
 			<div class="container">
 				<div class="row">
 				<div class="col-sm-12 text-right">
-					<nav>
+					<nav class="clearfix">
 						<ul class="list-inline">
 							<li><a data-toggle="collapse" href="#contact-wrapper" id="contact-me-btn">contact me</a></li>
 							<li><a href="https://github.com/jwayneroth">github</a></li>
