@@ -1,27 +1,5 @@
 var JWR = JWR || {};
 
-(function($) {
-
-	function Loader() {}
-	
-	Loader.el = null;
-	
-	Loader.init = function() {
-		this.el = $('#image-loader');
-	};
-	
-	Loader.show = function() {
-		this.el.show();
-	};
-	
-	Loader.hide = function() {
-		this.el.hide();
-	};
-	
-	JWR.Loader = Loader;
-
-}(jQuery));
-
 jQuery(document).ready(function($) {
 	
 	console.log('docready');
@@ -32,8 +10,15 @@ jQuery(document).ready(function($) {
 	JWR.Loader.init();
 	
 	$('#contact-wrapper').on('shown.bs.collapse', function() {
-		window.scrollTo(0,document.body.scrollHeight);
+		
+		//window.scrollTo(0,document.body.scrollHeight);
+		
+		$('html, body').animate({
+    	scrollTop: document.body.scrollHeight
+		}, 400);
+		
 		$('#contact-me-btn').text('hide form');
+	
 	});
 	
 	$('#contact-wrapper').on('hidden.bs.collapse', function() {
@@ -68,7 +53,10 @@ jQuery(document).ready(function($) {
 			JWR.Zoom.checkClose();
 			JWR.Zoom.setZoomButtonTarget( $thumb.data('zoom') );
 		
-			window.scrollTo(0,0);
+			//window.scrollTo(0,0);
+			$('html, body').animate({
+				scrollTop: 0
+			}, 400);
 		
 			return false;
 
@@ -80,3 +68,22 @@ jQuery(document).ready(function($) {
 		$('#jwr-canvas, #controls-wrapper').hide();
 	}
 });
+
+/*
+ * Loader class
+ * controls ajax-loader gif
+*/
+(function($) {
+	function Loader() {}
+	Loader.el = null;
+	Loader.init = function() {
+		this.el = $('#image-loader');
+	};
+	Loader.show = function() {
+		this.el.show();
+	};
+	Loader.hide = function() {
+		this.el.hide();
+	};
+	JWR.Loader = Loader;
+}(jQuery));

@@ -115,14 +115,6 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-sm-6">
-					<button class="btn btn-default h3" type="button" data-toggle="collapse" data-target="#contact-wrapper" id="contact-me-btn">contact me</button>
-					<div class="collapse" id="contact-wrapper">
-						<?php gravity_form( 1, false, false, false, null, true ); ?>
-					</div>
-				</div>
-			</div>
 		</div>
 	</section>
 

@@ -1736,12 +1736,12 @@ textarea {
 
 /* line 48, ../scss/bootstrap/_scaffolding.scss */
 a {
-  color: #f01d4f;
+  color: #323944;
   text-decoration: none;
 }
 /* line 52, ../scss/bootstrap/_scaffolding.scss */
 a:hover, a:focus {
-  color: #b50c34;
+  color: #121418;
   text-decoration: underline;
 }
 /* line 58, ../scss/bootstrap/_scaffolding.scss */
@@ -4596,7 +4596,7 @@ select[multiple].input-lg,
 
 /* line 88, ../scss/bootstrap/_buttons.scss */
 .btn-link {
-  color: #f01d4f;
+  color: #323944;
   font-weight: normal;
   border-radius: 0;
 }
@@ -4612,7 +4612,7 @@ select[multiple].input-lg,
 }
 /* line 107, ../scss/bootstrap/_buttons.scss */
 .btn-link:hover, .btn-link:focus {
-  color: #b50c34;
+  color: #121418;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -4894,7 +4894,7 @@ tbody.collapse.in {
 /* line 46, ../scss/bootstrap/_navs.scss */
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
   background-color: #eeeeee;
-  border-color: #f01d4f;
+  border-color: #323944;
 }
 /* line 59, ../scss/bootstrap/_navs.scss */
 .nav .nav-divider {
@@ -6086,13 +6086,13 @@ body#tinymce.wp-editor {
 }
 /* line 37, ../scss/editor-style.scss */
 body#tinymce.wp-editor a, body#tinymce.wp-editor a:visited {
-  color: #f01d4f;
+  color: #323944;
   /* on hover */
   /* on click */
 }
 /* line 41, ../scss/editor-style.scss */
 body#tinymce.wp-editor a:hover, body#tinymce.wp-editor a:focus, body#tinymce.wp-editor a:visited:hover, body#tinymce.wp-editor a:visited:focus {
-  color: #b50c34;
+  color: #121418;
 }
 /* line 50, ../scss/editor-style.scss */
 body#tinymce.wp-editor a:link, body#tinymce.wp-editor a:visited:link {

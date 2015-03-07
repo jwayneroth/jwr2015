@@ -88,15 +88,17 @@ canvas {
 		}
 	}
 }
+
 /////////////////////////////
 //
 // MAIN
 //
 /////////////////////////
+
 #main {
 	//@include even-shadow;
 	//background-color: rgb(230,230,230);
-	padding-bottom: 4em;
+	//padding-bottom: 4em;
 }
 
 
@@ -155,9 +157,26 @@ canvas {
 	}
 }
 
+/////////////////////////////
+//
+// FOOTER
+//
+/////////////////////////
+
+#footer {
+	padding: $grid-gutter-width 0;
+}
+
+nav {
+	font-size: .9em;
+}
+
 #contact-wrapper {
 	text-align:center;
-
+	
+	.row {
+		border-top:1px solid $border-color;
+	}
 	ul.gform_fields {
 		width:100%;
 
