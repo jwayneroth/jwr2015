@@ -5969,17 +5969,21 @@ canvas {
 }
 /* line 67, ../scss/style.scss */
 #image-loader img {
-  position: relative;
+  display: block;
+  position: absolute;
   top: 50%;
+  left: 50%;
+  margin-left: -8px;
+  margin-top: -8px;
 }
 
-/* line 72, ../scss/style.scss */
+/* line 76, ../scss/style.scss */
 #banner-title-row {
   padding-top: 10px;
   padding-bottom: 45px;
 }
 
-/* line 76, ../scss/style.scss */
+/* line 80, ../scss/style.scss */
 #image-caption {
   font-size: .8em;
   text-align: right;
@@ -5987,43 +5991,43 @@ canvas {
   padding: 8px 0;
 }
 
-/* line 83, ../scss/style.scss */
+/* line 87, ../scss/style.scss */
 #title {
   font-style: italic;
   padding-top: 45px;
 }
 
-/* line 87, ../scss/style.scss */
+/* line 91, ../scss/style.scss */
 #controls-wrapper {
   float: right;
 }
-/* line 90, ../scss/style.scss */
+/* line 94, ../scss/style.scss */
 #controls-wrapper .btn, #controls-wrapper #contact-wrapper .gform_footer input, #contact-wrapper .gform_footer #controls-wrapper input {
   font-size: 20px;
   color: #323944;
 }
-/* line 94, ../scss/style.scss */
+/* line 98, ../scss/style.scss */
 #controls-wrapper .btn:hover, #controls-wrapper #contact-wrapper .gform_footer input:hover, #contact-wrapper .gform_footer #controls-wrapper input:hover {
   color: #505050;
 }
 
-/* line 106, ../scss/style.scss */
+/* line 110, ../scss/style.scss */
 #main {
   border-top: 1px solid #645a64;
 }
 
-/* line 114, ../scss/style.scss */
+/* line 118, ../scss/style.scss */
 .thumb-row {
   border-bottom: 1px solid #645a64;
 }
 
-/* line 119, ../scss/style.scss */
+/* line 123, ../scss/style.scss */
 .thumb-column {
   padding-top: 15px;
   padding-bottom: 15px;
 }
 
-/* line 126, ../scss/style.scss */
+/* line 130, ../scss/style.scss */
 .thumb {
   width: 100%;
   height: 100px;
@@ -6037,21 +6041,21 @@ canvas {
   border-radius: 2px;
   cursor: pointer;
 }
-/* line 138, ../scss/style.scss */
+/* line 142, ../scss/style.scss */
 .thumb a {
   display: block;
   margin: 0 auto;
 }
-/* line 142, ../scss/style.scss */
+/* line 146, ../scss/style.scss */
 .thumb img {
   opacity: .6;
 }
-/* line 147, ../scss/style.scss */
+/* line 151, ../scss/style.scss */
 .thumb.hover-on img {
   opacity: 1;
 }
 
-/* line 152, ../scss/style.scss */
+/* line 156, ../scss/style.scss */
 .thumb-overlay {
   position: absolute;
   left: 0;
@@ -6065,64 +6069,64 @@ canvas {
   display: none;
   border-radius: 2px;
 }
-/* line 164, ../scss/style.scss */
+/* line 168, ../scss/style.scss */
 .thumb-overlay .inner {
   padding: 1em;
 }
 
-/* line 176, ../scss/style.scss */
+/* line 180, ../scss/style.scss */
 #footer .row {
   padding-top: 30px;
   padding-bottom: 30px;
 }
 
-/* line 182, ../scss/style.scss */
+/* line 186, ../scss/style.scss */
 nav {
   font-size: .9em;
 }
 
-/* line 186, ../scss/style.scss */
+/* line 190, ../scss/style.scss */
 #contact-wrapper {
   text-align: center;
 }
-/* line 189, ../scss/style.scss */
+/* line 193, ../scss/style.scss */
 #contact-wrapper .row {
   border-top: 1px solid #645a64;
 }
-/* line 192, ../scss/style.scss */
+/* line 196, ../scss/style.scss */
 #contact-wrapper ul.gform_fields {
   width: 100%;
 }
-/* line 195, ../scss/style.scss */
+/* line 199, ../scss/style.scss */
 #contact-wrapper ul.gform_fields li.gfield {
   width: 49%;
   margin-bottom: 1.3em;
   float: left;
   clear: none;
 }
-/* line 201, ../scss/style.scss */
+/* line 205, ../scss/style.scss */
 #contact-wrapper ul.gform_fields li.gfield#field_1_2 {
   float: right;
 }
-/* line 204, ../scss/style.scss */
+/* line 208, ../scss/style.scss */
 #contact-wrapper ul.gform_fields li.gfield.gfield_error.gfield_contains_required {
   margin-top: 0;
 }
-/* line 208, ../scss/style.scss */
+/* line 212, ../scss/style.scss */
 #contact-wrapper ul.gform_fields li.gfield#field_1_3 {
   width: 100%;
   clear: both;
 }
-/* line 213, ../scss/style.scss */
+/* line 217, ../scss/style.scss */
 #contact-wrapper ul.gform_fields li.gfield input, #contact-wrapper ul.gform_fields li.gfield textarea {
   border: 1px solid #645a64;
   border-radius: 4px;
 }
-/* line 222, ../scss/style.scss */
+/* line 226, ../scss/style.scss */
 #contact-wrapper .gform_footer {
   clear: none;
 }
-/* line 225, ../scss/style.scss */
+/* line 229, ../scss/style.scss */
 #contact-wrapper .gform_footer input {
   /*float:right;
   width:49%;
@@ -6134,7 +6138,7 @@ nav {
   font-size: .86em;
   color: $white;*/
 }
-/* line 239, ../scss/style.scss */
+/* line 243, ../scss/style.scss */
 #contact-wrapper #gforms_confirmation_message {
   margin: 2em 0;
 }
