@@ -26,7 +26,7 @@ $brand-danger:          #d9534f !default;
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-$body-bg:               rgb(220,220,220);//#fff !default;
+$body-bg:               #fff;//rgb(220,220,220);//#fff !default;
 //** Global text color on `<body>`.
 $text-color:            $black; //$gray-dark !default;
 
@@ -317,7 +317,7 @@ $screen-md-max:              ($screen-lg-min - 1) !default;
 //## Define your custom responsive grid.
 
 //** Number of columns in the grid.
-$grid-columns:              12 !default;
+$grid-columns:              10;//12 !default;
 //** Padding between columns. Gets divided in half for the left and right.
 $grid-gutter-width:         30px !default;
 // Navbar collapse
@@ -334,7 +334,7 @@ $grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
 // Small screen / tablet
 $container-tablet:             (720px + $grid-gutter-width) !default;
 //** For `$screen-sm-min` and up.
-$container-sm:                 $container-tablet !default;
+$container-sm:                 100%;//$container-tablet !default;
 
 // Medium screen / desktop
 $container-desktop:            (940px + $grid-gutter-width) !default;

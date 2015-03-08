@@ -12,6 +12,10 @@
 #banner {
 	padding-bottom:$grid-gutter-width;
 }
+#banner-main-col {
+	padding-left:0;
+	padding-right:0;
+}
 canvas {
 	width:100%;
 	height:auto;
@@ -24,7 +28,7 @@ canvas {
 	overflow:hidden;
 	width:100%;
 	height:auto;
-	padding:15px 0 0px;//20px;
+	padding:0;//padding:15px 0 0px;//20px;
 }
 
 #canvas-wrapper {
@@ -65,6 +69,10 @@ canvas {
 		top:50%;
 	}
 }
+#banner-title-row {
+	padding-top:10px;
+	padding-bottom:45px;
+}
 #image-caption {
 	font-size: .8em;
 	text-align:right;
@@ -74,7 +82,7 @@ canvas {
 
 #title {
 	font-style:italic;
-	margin-top: 5px;//10px; 
+	padding-top: 45px; //5px;//10px; 
 }
 #controls-wrapper {
 	float:right;
@@ -99,11 +107,12 @@ canvas {
 	//@include even-shadow;
 	//background-color: rgb(230,230,230);
 	//padding-bottom: 4em;
+	border-top:1px solid $border-color;
 }
 
 
 .thumb-row {
-	border-top:1px solid $border-color;
+	//border-top:1px solid $border-color;
 	border-bottom:1px solid $border-color;
 }
 

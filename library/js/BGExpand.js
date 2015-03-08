@@ -139,7 +139,7 @@ var JWR = JWR || {};
 		//$('body').attr('style', 'background-color:#00f');
 		//this.fadeEdges(canvas,320);
 			
-		this.el.html(canvas);
+		//this.el.html(canvas);
 		
 		//this.el.append('<img src="'+image.src+'" width="'+image.width+'" height="'+image.height+'" style="position:absolute;left:'+pos.dx+'px;top:'+pos.dy+'px;" />');
 		

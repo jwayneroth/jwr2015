@@ -103,7 +103,7 @@ var JWR = JWR || {};
 		
 		//$('#wrapper-all').attr('style', bg);
 		$('#banner').attr('style', bg);
-		$('body').css('background-color', 'rgb(' + this.stop2.r + ',' + this.stop2.g + ',' + this.stop2.b + ')');
+		//$('body').css('background-color', 'rgb(' + this.stop2.r + ',' + this.stop2.g + ',' + this.stop2.b + ')');
 
 	};
 
