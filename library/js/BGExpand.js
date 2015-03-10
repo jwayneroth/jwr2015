@@ -8,7 +8,7 @@ var JWR = JWR || {};
 	BGExpand.el = null;
 	BGExpand.currentImageName = null;
 	BGExpand.canvas = null;
-	BGExpand.canvasMaxW = 1140;//900;//$(window).width();//900;
+	BGExpand.canvasMaxW = 1170;//900;//$(window).width();//900;
 	BGExpand.canvasMaxH = 720;//$(window).height();//720;
 	BGExpand.images = null;
 
