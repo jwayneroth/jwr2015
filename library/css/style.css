@@ -6061,16 +6061,25 @@ nav {
 }
 
 /* line 192, ../scss/style.scss */
+#contact-result {
+  font-style: italic;
+}
+
+/* line 196, ../scss/style.scss */
 #contact-form {
   color: #323944;
 }
-/* line 195, ../scss/style.scss */
+/* line 199, ../scss/style.scss */
 #contact-form .form-control {
   color: #323944;
 }
-/* line 198, ../scss/style.scss */
+/* line 202, ../scss/style.scss */
 #contact-form .btn {
   margin-top: 1em;
+}
+/* line 205, ../scss/style.scss */
+#contact-form .row:last-child {
+  margin-bottom: 2em;
 }
 
 /*

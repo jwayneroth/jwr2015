@@ -51,11 +51,35 @@ jQuery(document).ready(function($) {
 		
 		submitHandler: function(form) {
 			
-			console.log('contact submitted', form);
+			//console.log('contact submitted', form);
 			
-			//$.ajax({
-			//	
-			//s});
+			$.ajax({
+				type: 'post',
+				url: JWR.ajaxurl,
+				data: {
+					'action': 'jwr_contact_submit',
+					'contact-pass': $('#contact-pass').val(),
+					'contact-name': $('#contact-name').val(),
+					'contact-email': $('#contact-email').val(),
+					'contact-message': $('#contact-message').val()
+				},
+				success: function(data) {
+					//console.log('ajax success');
+					$(form).hide();
+					$('#contact-result')
+						.removeClass('text-danger')
+						.addClass('text-primary')
+						.text('Thanks!');
+				},
+				error: function() {
+					//console.log('ajax error');
+					$(form).hide();
+					$('#contact-result')
+						.removeClass('text-primary')
+						addClass('text-danger')
+						.text('Uh oh, something went wrong. Try again later');
+				}
+			});
 			
 		}
 	});

@@ -189,6 +189,10 @@ nav {
 
 #contact-wrapper {}
 
+#contact-result {
+	font-style: italic;
+}
+
 #contact-form {
 	color: $black;
 	
@@ -197,6 +201,9 @@ nav {
 	}
 	.btn {
 		margin-top: 1em;
+	}
+	.row:last-child {
+		margin-bottom: 2em;
 	}
 }
 	

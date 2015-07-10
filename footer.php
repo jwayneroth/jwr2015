@@ -13,12 +13,14 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="collapse" id="contact-wrapper">
+							<h3 id="contact-result" class="text-center"></h3>
 							<form class="form" id="contact-form">
 								<div class="row">
 									<div class="col-sm-12">
 										<div class="form-group">
 											<label for="contact-name" class="col-sm-1 control-label">Name</label>
 											<div class="col-sm-3">
+												<input type="hidden" id="contact-pass" name="contact_pass" value="phrase">
 												<input type="text" class="form-control" id="contact-name" name="contact_name" placeholder="Name">
 											</div>
 										</div>
