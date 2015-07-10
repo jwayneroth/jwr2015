@@ -176,74 +176,31 @@ canvas {
 //
 /////////////////////////
 
-#footer {
-	.row {
-		padding-top: $grid-gutter-width;
-		padding-bottom: $grid-gutter-width;
-	}
+#footer {}
+
+#footer-links-wrapper {
+	padding-top: $grid-gutter-width;
+	padding-bottom: $grid-gutter-width;
 }
 
 nav {
 	font-size: .9em;
 }
 
-#contact-wrapper {
-	text-align:center;
-	
-	.row {
-		border-top:1px solid $border-color;
-	}
-	ul.gform_fields {
-		width:100%;
+#contact-wrapper {}
 
-		li.gfield {
-			width:49%;
-			margin-bottom: 1.3em;
-			float:left;
-			clear:none;
-			
-			&#field_1_2 { //,&:nth-child(2) {
-				float:right;
-			}
-			&.gfield_error.gfield_contains_required {
-				margin-top:0;
-			}
-		
-			&#field_1_3 {
-				width:100%; 
-				clear:both; 
-			}
-		
-			input, textarea {
-				//border: 1px solid $black;
-				//height:37px;
-				border: 1px solid $border-color;
-				border-radius: $border-radius-base;
-			}
-		}
-	}
-	//submit button
-	.gform_footer {
-		clear:none;
+#contact-form {
+	color: $black;
 	
-		input {
-			@extend .btn;
-			/*float:right;
-			width:49%;
-			clear:none;
-			height: 37px;
-			line-height:37px;
-			border:none;
-			outline:none;
-			font-size: .86em;
-			color: $white;*/
-		}
+	.form-control {
+		color: $black;
 	}
-	
-	#gforms_confirmation_message {
-		margin: 2em 0;
+	.btn {
+		margin-top: 1em;
 	}
 }
+	
+	
 /*
 @media only screen and (min-width: 481px) {
 

@@ -11,8 +11,6 @@ jQuery(document).ready(function($) {
 	
 	$('#contact-wrapper').on('shown.bs.collapse', function() {
 		
-		//window.scrollTo(0,document.body.scrollHeight);
-		
 		$('html, body').animate({
     	scrollTop: document.body.scrollHeight
 		}, 400);
@@ -30,6 +28,36 @@ jQuery(document).ready(function($) {
 		$(evt.currentTarget).addClass('hover-on');
 	}, function(evt) {
 		$(evt.currentTarget).removeClass('hover-on');
+	});
+	
+	$("#contact-form").validate({
+		
+		rules: {
+			contact_name: {
+				required: true
+			},
+			contact_email: {
+				required: true,
+				email: true
+			},
+			contact_message: {
+				required: true
+			}
+		},
+		
+		//invalidHandler: function(evt, validator) {
+		//	console.log('contact submit invalid', validator);
+		//},
+		
+		submitHandler: function(form) {
+			
+			console.log('contact submitted', form);
+			
+			//$.ajax({
+			//	
+			//s});
+			
+		}
 	});
 	
 	//console.log(Modernizr);
