@@ -21,9 +21,9 @@ function jwr_global_js() {
 add_action('wp_head', 'jwr_global_js');
 
 /*
- * jwr_contact_submit
+ * jwr_ajax_contact_submit
 */
-function jwr_contact_submit() {
+function jwr_ajax_contact_submit() {
 	
 	if( !isset($_POST['contact-pass']) || $_POST['contact-pass'] != 'phrase' ) {
 		echo 0;
@@ -52,8 +52,8 @@ function jwr_contact_submit() {
 	wp_die();
 	
 }
-add_action( 'wp_ajax_jwr_contact_submit', 'jwr_contact_submit' );
-add_action( 'wp_ajax_no_priv_jwr_contact_submit', 'jwr_contact_submit' );
+add_action( 'wp_ajax_contact_submit', 'jwr_ajax_contact_submit' );
+add_action( 'wp_ajax_nopriv_contact_submit', 'jwr_ajax_contact_submit' );
 
 add_image_size( 'painting-zoom', 1153 );
 add_image_size( 'painting-full', 700, 600 );

@@ -57,7 +57,7 @@ jQuery(document).ready(function($) {
 				type: 'post',
 				url: JWR.ajaxurl,
 				data: {
-					'action': 'jwr_contact_submit',
+					'action': 'contact_submit',
 					'contact-pass': $('#contact-pass').val(),
 					'contact-name': $('#contact-name').val(),
 					'contact-email': $('#contact-email').val(),
