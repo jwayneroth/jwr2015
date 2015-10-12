@@ -66,7 +66,7 @@ function jwr_page_scripts() {
 
 	//scripts
 	wp_register_script('bootstrap', get_stylesheet_directory_uri() . '/library/js/libs/bootstrap.min.js', array('jquery'));
-	wp_register_script('validate', get_stylesheet_directory_uri() . '/library/js/libs/jquery.validate.min.js', array('jquery'));
+	//wp_register_script('validate', get_stylesheet_directory_uri() . '/library/js/libs/jquery.validate.min.js', array('jquery'));
 	wp_register_script('jwr-bgexpand', get_stylesheet_directory_uri() . '/library/js/BGExpand.js', array('jquery'));
 	wp_register_script('jwr-main', get_stylesheet_directory_uri() . '/library/js/main.js', array('jquery'));
 	wp_register_script('jwr-timebg', get_stylesheet_directory_uri() . '/library/js/TimeBG.js', array('jquery'));
@@ -80,7 +80,7 @@ function jwr_page_scripts() {
 	if(!is_admin()) {
 		//all frontend
 		wp_enqueue_script('bootstrap');
-		wp_enqueue_script('validate');
+		//wp_enqueue_script('validate');
 		wp_enqueue_script('jwr-bgexpand');
 		wp_enqueue_script('jwr-main');
 		wp_enqueue_script('jwr-timebg');

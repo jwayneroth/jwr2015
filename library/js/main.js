@@ -15,7 +15,7 @@ jQuery(document).ready(function($) {
     	scrollTop: document.body.scrollHeight
 		}, 400);
 		
-		$('#contact-me-btn').text('hide form');
+		$('#contact-me-btn').text('^');//'hide form');
 	
 	});
 	
@@ -30,7 +30,7 @@ jQuery(document).ready(function($) {
 		$(evt.currentTarget).removeClass('hover-on');
 	});
 	
-	$("#contact-form").validate({
+	/*$("#contact-form").validate({
 		
 		rules: {
 			contact_name: {
@@ -82,7 +82,7 @@ jQuery(document).ready(function($) {
 			});
 			
 		}
-	});
+	});*/
 	
 	//console.log(Modernizr);
 	

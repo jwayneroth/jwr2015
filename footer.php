@@ -5,15 +5,19 @@
 						<nav class="clearfix">
 							<ul class="list-inline">
 								<li><a data-toggle="collapse" href="#contact-wrapper" id="contact-me-btn">contact me</a></li>
-								<li><a href="https://github.com/jwayneroth">github</a></li>
+								<!--<li><a href="https://github.com/jwayneroth">github</a></li>-->
 							</ul>
 						</nav>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-xs-12">
+					<div class="col-xs-12 text-right">
 						<div class="collapse" id="contact-wrapper">
-							<h3 id="contact-result" class="text-center"></h3>
+							<ul class="list-inline" style="padding-bottom: 3em;">
+								<li>rothpaintings[at]gmail[dot]com</li>
+								<li><a href="https://github.com/jwayneroth">github</a></li>
+							</ul>
+							<!--<h3 id="contact-result" class="text-center"></h3>
 							<form class="form" id="contact-form">
 								<div class="row">
 									<div class="col-sm-12">
@@ -47,7 +51,7 @@
 										<button type="submit" class="btn btn-default">Submit</button>
 									</div>
 								</div>
-							</form>
+							</form>-->
 						</div>
 					</div>
 				</div>

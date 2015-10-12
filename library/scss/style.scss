@@ -176,7 +176,8 @@ canvas {
 //
 /////////////////////////
 
-#footer {}
+#footer {
+}
 
 #footer-links-wrapper {
 	padding-top: $grid-gutter-width;
@@ -188,6 +189,13 @@ nav {
 }
 
 #contact-wrapper {}
+
+#contact-me-btn {
+	text-decoration: none;
+	&:hover,
+	&:active,
+	&:visited { text-decoration: none; }
+}
 
 #contact-result {
 	font-style: italic;
